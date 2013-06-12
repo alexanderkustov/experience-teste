@@ -1,0 +1,196 @@
+
+<div class="row">
+  
+<div class="span3  ">
+        <img src="img/logo-icc.png" width="140" class="img-circle img-polaroid">
+        <hr>
+           <h4>Producer Name</h4>
+<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+<h6>
+  <ul>
+    <li>Some Link To Something</li>
+     <li>Some Link To Something</li>
+      <li>Some Link To Something</li>
+  </ul>
+</h6>
+      
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @producer.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @producer.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @producer.password_digest %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @producer.phone %>
+</p>
+
+<p>
+  <b>Fb:</b>
+  <%= @producer.fb %>
+</p>
+
+<p>
+  <b>Gplus:</b>
+  <%= @producer.gplus %>
+</p>
+
+<p>
+  <b>Linked:</b>
+  <%= @producer.linked %>
+</p>
+
+<p>
+  <b>Twit:</b>
+  <%= @producer.twit %>
+</p>
+
+<p>
+  <b>Birth date:</b>
+  <%= @producer.birth_date %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @producer.nationality %>
+</p>
+
+<p>
+  <b>Passport:</b>
+  <%= @producer.passport %>
+</p>
+
+<p>
+  <b>Ss:</b>
+  <%= @producer.ss %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @producer.address %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= @producer.photo %>
+</p>
+
+
+<%= link_to 'Edit', edit_producer_path(@producer) %> |
+<%= link_to 'Back', producers_path %> | 
+<%= link_to 'Create New Product', new_product_path %> 
+      </div>
+
+
+<div class="span9">
+<div class="row">
+  <% @products.each do |product| %>
+      <div class="span3" id="wrapper">
+      
+        <img src="img/ok.jpg" class="img-polaroid hover">
+            <p class="texth">PRICE WILL APPEAR HERE</p>
+      
+       <div class="btn-group">
+              <button class="btn btn-large">Buy</button>
+              <button class="btn disabled btn-large">$55</button>
+              <button class="btn btn-large">View Details</button>
+        </div>
+
+
+<p>
+  <b>Producer:</b>
+  <%= @product.producer_id %>
+</p>
+
+<p>
+  <b>Dt:</b>
+  <%= @product.dt %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @product.desc %>
+</p>
+
+<p>
+  <b>Users:</b>
+  <%= @product.users %>
+</p>
+
+<p>
+  <b>Benefits:</b>
+  <%= @product.benefits %>
+</p>
+
+<p>
+  <b>Estimated rsp:</b>
+  <%= @product.estimated_rsp %>
+</p>
+
+<p>
+  <b>L price:</b>
+  <%= @product.l_price %>
+</p>
+
+<p>
+  <b>Benefits clients:</b>
+  <%= @product.benefits_clients %>
+</p>
+
+<p>
+  <b>Photos:</b>
+  <%= @product.photos %>
+</p>
+
+<p>
+  <b>Videos:</b>
+  <%= @product.videos %>
+</p>
+
+<p>
+  <b>Sr2l:</b>
+  <%= @product.sr2l %>
+</p>
+
+<p>
+  <b>Refp number:</b>
+  <%= @product.refp_number %>
+</p>
+
+<p>
+  <b>Fixed costs:</b>
+  <%= @product.fixed_costs %>
+</p>
+
+<p>
+  <b>Gross margin:</b>
+  <%= @product.gross_margin %>
+</p>
+
+<p>
+  <b>Bp link:</b>
+  <%= @product.bp_link %>
+</p>
+
+<p>
+  <b>Pp link:</b>
+  <%= @product.pp_link %>
+</p>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+      </div>
+
+<% end %>
+
+</div>

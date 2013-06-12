@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id          :integer          not null, primary key
+#  product_id  :integer
+#  customer_id :integer
+#  telephone   :integer
+#  qty         :integer
+#  date        :datetime
+#  l_price     :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 
+  customer_id: 
+  telephone: 
+  qty: 
+  date: 2013-06-12 15:27:06
+  l_price: MyString
+
+two:
+  product_id: 
+  customer_id: 
+  telephone: 
+  qty: 
+  date: 2013-06-12 15:27:06
+  l_price: MyString

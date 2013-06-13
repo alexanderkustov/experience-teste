@@ -47,7 +47,8 @@ before_filter :producer_user, only: [:new, :create, :destroy]
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
+    @product = current_user.products.build(params[:product])
+    # @product = Product.new(params[:product])
 
     respond_to do |format|
       if @product.save

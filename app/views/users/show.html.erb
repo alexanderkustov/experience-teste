@@ -97,19 +97,15 @@
         </div>
 
 
-<li>
-  <b>User:</b>
-  <%= @product.user_id %>
-</li>
 
 <li>
   <b>Dt:</b>
-  <%= @product.dt %>
+  <%= product.dt %>
 </li>
 
 <li>
   <b>Desc:</b>
-  <%= @product.desc %>
+  <%= product.desc %>
 </li>
 
 <li>
@@ -119,66 +115,65 @@
 
 <li>
   <b>Benefits:</b>
-  <%= @product.benefits %>
+  <%= product.benefits %>
 </li>
 
 <li>
   <b>Estimated rsp:</b>
-  <%= @product.estimated_rsp %>
+  <%= product.estimated_rsp %>
 </li>
 
 <li>
   <b>L price:</b>
-  <%= @product.l_price %>
+  <%= product.l_price %>
 </li>
 
 <li>
   <b>Benefits clients:</b>
-  <%= @product.benefits_clients %>
+  <%= product.benefits_clients %>
 </li>
 
 <li>
   <b>Photos:</b>
-  <%= @product.photos %>
+  <%= product.photos %>
 </li>
 
 <li>
   <b>Videos:</b>
-  <%= @product.videos %>
+  <%= product.videos %>
 </li>
 
 <li>
   <b>Sr2l:</b>
-  <%= @product.sr2l %>
+  <%= product.sr2l %>
 </li>
 
 <li>
   <b>Refp number:</b>
-  <%= @product.refp_number %>
+  <%= product.refp_number %>
 </li>
 
 <li>
   <b>Fixed costs:</b>
-  <%= @product.fixed_costs %>
+  <%= product.fixed_costs %>
 </li>
 
 <li>
   <b>Gross margin:</b>
-  <%= @product.gross_margin %>
+  <%= product.gross_margin %>
 </li>
 
 <li>
   <b>Bp link:</b>
-  <%= @product.bp_link %>
+  <%= product.bp_link %>
 </li>
 
 <li>
   <b>Pp link:</b>
-  <%= @product.pp_link %>
+  <%= product.pp_link %>
 </li>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
-      </div>
+<%= link_to 'Edit', edit_product_path(product) %> |
+</div>
 
 <% end %>
 

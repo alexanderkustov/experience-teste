@@ -4,10 +4,9 @@ resources :sessions, only: [:new, :create, :destroy]
 
 resources :orders
 resources :products
-resources :customers
-resources :producers
+resources :users
 
-match '/signup',  to: 'producers#new'
+match '/signup',  to: 'users#new'
   
 match '/signin',  to: 'sessions#new'
 match '/signout', to: 'sessions#destroy', via: :delete

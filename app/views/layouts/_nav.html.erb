@@ -20,8 +20,7 @@
                 Logged in as <%= current_user.email %>
                 <%= link_to "Log out", signout_path, method: "delete" %>
               <% else %>
-                <%= link_to "Register as Consumer", new_customer_path , :class => "btn btn-info" %>
-              <%= link_to "Register as Producer", new_producer_path , :class => "btn btn-warning" %>    
+                <%= link_to "Register as User", new_user_path , :class => "btn btn-warning" %>    
               <% end %>
             </form>
           </div><!--/.nav-collapse -->

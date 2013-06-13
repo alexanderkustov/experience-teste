@@ -1,10 +1,9 @@
 class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
-      t.integer :producer_id
+      t.integer :user_id
       t.string :dt
       t.string :desc
-      t.integer :users
       t.string :benefits
       t.string :estimated_rsp
       t.string :l_price

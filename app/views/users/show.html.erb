@@ -4,7 +4,7 @@
 <div class="span3  ">
         <img src="img/logo-icc.png" width="140" class="img-circle img-polaroid">
         <hr>
-           <h4>Producer Name</h4>
+           <h4>User Name</h4>
 <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
 <h6>
   <ul>
@@ -18,77 +18,77 @@
 
 <p>
   <b>Name:</b>
-  <%= @producer.name %>
+  <%= @user.name %>
 </p>
 
 <p>
   <b>Email:</b>
-  <%= @producer.email %>
+  <%= @user.email %>
 </p>
 
 <p>
   <b>Password:</b>
-  <%= @producer.password_digest %>
+  <%= @user.password_digest %>
 </p>
 
 <p>
   <b>Phone:</b>
-  <%= @producer.phone %>
+  <%= @user.phone %>
 </p>
 
 <p>
   <b>Fb:</b>
-  <%= @producer.fb %>
+  <%= @user.fb %>
 </p>
 
 <p>
   <b>Gplus:</b>
-  <%= @producer.gplus %>
+  <%= @user.gplus %>
 </p>
 
 <p>
   <b>Linked:</b>
-  <%= @producer.linked %>
+  <%= @user.linked %>
 </p>
 
 <p>
   <b>Twit:</b>
-  <%= @producer.twit %>
+  <%= @user.twit %>
 </p>
 
 <p>
   <b>Birth date:</b>
-  <%= @producer.birth_date %>
+  <%= @user.birth_date %>
 </p>
 
 <p>
   <b>Nationality:</b>
-  <%= @producer.nationality %>
+  <%= @user.nationality %>
 </p>
 
 <p>
   <b>Passport:</b>
-  <%= @producer.passport %>
+  <%= @user.passport %>
 </p>
 
 <p>
   <b>Ss:</b>
-  <%= @producer.ss %>
+  <%= @user.ss %>
 </p>
 
 <p>
   <b>Address:</b>
-  <%= @producer.address %>
+  <%= @user.address %>
 </p>
 
 <p>
   <b>Photo:</b>
-  <%= @producer.photo %>
+  <%= @user.photo %>
 </p>
 
 
-<%= link_to 'Edit', edit_producer_path(@producer) %> |
-<%= link_to 'Back', producers_path %> | 
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> | 
 <%= link_to 'Create New Product', new_product_path %> 
       </div>
 
@@ -109,8 +109,8 @@
 
 
 <p>
-  <b>Producer:</b>
-  <%= @product.producer_id %>
+  <b>User:</b>
+  <%= @product.user_id %>
 </p>
 
 <p>
@@ -125,7 +125,7 @@
 
 <p>
   <b>Users:</b>
-  <%= @product.users %>
+  Mostrar lista pelas transactions efectuadas
 </p>
 
 <p>

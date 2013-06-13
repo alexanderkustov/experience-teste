@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-
-
   skip_before_filter :authorize
 
 
@@ -8,16 +6,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	producer = Producer.find_by_email(params[:email])
+  	producer = Producer.authenticate(params[:email], params[:password])
     if producer and producer.authenticate(params[:password])
       session[:id] = producer.id
       redirect_to root :controller=>'producers', :action => 'show'
     else
-      #redirect_to 'products#index' , alert: "Invalid user/password combination"
+      #redirect_tonation"
     end
   end
 
   def destroy
   	session[:id] = nil
+    redirect_to root_url
   end
 end

@@ -22,8 +22,21 @@
 #
 
 class Producer < ActiveRecord::Base
+  attr_accessor :password
+  
+
   has_many :products, :dependent => :destroy
   validates :email, presence: true, uniqueness: true
-  attr_accessible :address, :birth_date, :email, :fb, :gplus, :linked, :name, :nationality, :passport, :phone, :photo, :ss, :twit
+  attr_accessible :address, :password_digest, :birth_date, :email, :fb, :gplus, :linked, :name, :nationality, :passport, :phone, :photo, :ss, :twit
   has_secure_password
+
+  def self.authenticate(email, password)
+	user = find_by_email(email)
+	if user && user.password_digest ==
+	  user
+	else
+	  nil
+	end
+  end
+
 end

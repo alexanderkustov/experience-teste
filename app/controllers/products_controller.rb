@@ -24,6 +24,9 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
+
+    #if logged in as producer, can access this.
+    
     @product = Product.new
 
     respond_to do |format|

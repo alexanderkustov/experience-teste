@@ -19,24 +19,41 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 class Producer < ActiveRecord::Base
-  attr_accessor :password
+  
   
 
   has_many :products, :dependent => :destroy
   validates :email, presence: true, uniqueness: true
-  attr_accessible :address, :password_digest, :birth_date, :email, :fb, :gplus, :linked, :name, :nationality, :passport, :phone, :photo, :ss, :twit
+  attr_accessible :address, :password, :password_confirmation, 
+    :birth_date, :email, :fb, :gplus, :linked, :name, 
+    :nationality, :passport, :phone, :photo, :ss, :twit
   has_secure_password
 
-  def self.authenticate(email, password)
-	user = find_by_email(email)
-	if user && user.password_digest ==
-	  user
-	else
-	  nil
-	end
-  end
+  validates :name, 
+    presence: true, 
+    length: {maximum: 50}
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, 
+      presence: true, 
+      format: { with: VALID_EMAIL_REGEX }, 
+      uniqueness: { case_sensitive: false }
+
+  #before_save { |user| user.email = email.downcase }
+  before_save { email.downcase! }
+  before_save :create_remember_token
+
+  validates :password, length: { minimum: 6 }
+  # validates :password_confirmation, presence: true
+
+  private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 
 end

@@ -15,10 +15,10 @@
             </ul>
             <form class="navbar-form pull-right">
               
-              <% if current_producer %>
+              <% if current_user %>
                 <%= link_to "Add Product", new_product_path , :class => "btn btn-danger" %>
-                Logged in as <%= current_producer.email %>
-                <%= link_to "Log out", log_out_path %>
+                Logged in as <%= current_user.email %>
+                <%= link_to "Log out", signout_path, method: "delete" %>
               <% else %>
                 <%= link_to "Register as Consumer", new_customer_path , :class => "btn btn-info" %>
               <%= link_to "Register as Producer", new_producer_path , :class => "btn btn-warning" %>    

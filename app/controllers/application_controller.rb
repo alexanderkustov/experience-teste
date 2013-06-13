@@ -1,20 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_producer
-  before_filter :authorize
- 
-  protected
- 
-  def authorize
-    unless Producer.find_by_id(session[:id])
-      
-    end
-  end
+  include SessionsHelper
 
-  private
-
-  def current_producer
-  	@current_producer ||= Producer.find_by_id(session[:producer_id]) if session[:producer_id]
+  # Force signout to prevent CSRF attacks
+  def handle_unverified_request
+    sign_out
+    super
   end
 
 end

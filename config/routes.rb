@@ -1,15 +1,16 @@
 Experiencia::Application.routes.draw do
 
-controller :sessions do
-  get 'login' => :new
-  post 'login' => :create
-  delete 'logout' => :destroy
-end
+resources :sessions, only: [:new, :create, :destroy]
 
 resources :orders
 resources :products
 resources :customers
 resources :producers
+
+match '/signup',  to: 'producers#new'
+  
+match '/signin',  to: 'sessions#new'
+match '/signout', to: 'sessions#destroy', via: :delete
 
 root :to => 'products#index'
 

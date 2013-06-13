@@ -15,7 +15,7 @@
 #  passport        :string(255)
 #  ss              :string(255)
 #  address         :string(255)
-#  photo           :string(255)
+#  image           :string(255)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
@@ -31,7 +31,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   attr_accessible :address, :password, :password_confirmation, 
     :birth_date, :email, :fb, :gplus, :linked, :name, 
-    :nationality, :passport, :phone, :photo, :ss, :twit
+    :nationality, :passport, :phone, :image, :remote_image_url, :ss, :twit
+
+    mount_uploader :image, ImageUploader
+
   has_secure_password
 
   validates :name, 

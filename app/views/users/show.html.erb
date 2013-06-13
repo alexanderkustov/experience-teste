@@ -2,90 +2,79 @@
 <div class="row">
   
 <div class="span3  ">
-        <img src="img/logo-icc.png" width="140" class="img-circle img-polaroid">
+        <img src="<%= @user.image_url(:thumb) %>" width="140" class="img-circle img-polaroid">
         <hr>
-           <h4>User Name</h4>
+           <h4><%= @user.name %></h4>
 <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
 <h6>
   <ul>
-    <li>Some Link To Something</li>
-     <li>Some Link To Something</li>
-      <li>Some Link To Something</li>
-  </ul>
-</h6>
+      
+
       
 <p id="notice"><%= notice %></p>
 
-<p>
+<li>
   <b>Name:</b>
   <%= @user.name %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Email:</b>
   <%= @user.email %>
-</p>
+</li>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password_digest %>
-</p>
-
-<p>
+<li>
   <b>Phone:</b>
   <%= @user.phone %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Fb:</b>
   <%= @user.fb %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Gplus:</b>
   <%= @user.gplus %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Linked:</b>
   <%= @user.linked %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Twit:</b>
   <%= @user.twit %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Birth date:</b>
   <%= @user.birth_date %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Nationality:</b>
   <%= @user.nationality %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Passport:</b>
   <%= @user.passport %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Ss:</b>
   <%= @user.ss %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Address:</b>
   <%= @user.address %>
-</p>
+</li>
 
-<p>
-  <b>Photo:</b>
-  <%= @user.photo %>
-</p>
-
+  </ul>
+</h6>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> | 
@@ -99,7 +88,7 @@
       <div class="span3" id="wrapper">
       
         <img src="img/ok.jpg" class="img-polaroid hover">
-            <p class="texth">PRICE WILL APPEAR HERE</p>
+            <p class="texth">PRICE WILL APPEAR HERE</li>
       
        <div class="btn-group">
               <button class="btn btn-large">Buy</button>
@@ -108,85 +97,85 @@
         </div>
 
 
-<p>
+<li>
   <b>User:</b>
   <%= @product.user_id %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Dt:</b>
   <%= @product.dt %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Desc:</b>
   <%= @product.desc %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Users:</b>
   Mostrar lista pelas transactions efectuadas
-</p>
+</li>
 
-<p>
+<li>
   <b>Benefits:</b>
   <%= @product.benefits %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Estimated rsp:</b>
   <%= @product.estimated_rsp %>
-</p>
+</li>
 
-<p>
+<li>
   <b>L price:</b>
   <%= @product.l_price %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Benefits clients:</b>
   <%= @product.benefits_clients %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Photos:</b>
   <%= @product.photos %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Videos:</b>
   <%= @product.videos %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Sr2l:</b>
   <%= @product.sr2l %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Refp number:</b>
   <%= @product.refp_number %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Fixed costs:</b>
   <%= @product.fixed_costs %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Gross margin:</b>
   <%= @product.gross_margin %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Bp link:</b>
   <%= @product.bp_link %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Pp link:</b>
   <%= @product.pp_link %>
-</p>
+</li>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
       </div>

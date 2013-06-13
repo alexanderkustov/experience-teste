@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => {:multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -69,8 +69,21 @@
   </div>
   <div class="field">
     <%= f.label :photo %><br />
-    <%= f.text_field :photo %>
+    <% if f.object.image_url %>
+    
+      <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
+      
+  
+    <% else %>
+
+      <%= f.file_field :image %>
+  
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url %>
+  
+    <% end %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

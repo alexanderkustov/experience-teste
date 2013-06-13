@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613144558) do
+ActiveRecord::Schema.define(:version => 20130613164952) do
 
   create_table "orders", :force => true do |t|
     t.integer  "product_id"
@@ -58,10 +58,11 @@ ActiveRecord::Schema.define(:version => 20130613144558) do
     t.string   "ss"
     t.string   "address"
     t.string   "photo"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "producer",        :default => false
   end
 
 end

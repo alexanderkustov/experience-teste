@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 before_filter :signed_in_user
+before_filter :correct_user, only: [:edit, :update, :destroy]
+before_filter :producer_user, only: [:new, :create, :destroy]
 
   # GET /products
   # GET /products.json
@@ -39,7 +41,7 @@ before_filter :signed_in_user
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
   end
 
   # POST /products
@@ -61,7 +63,7 @@ before_filter :signed_in_user
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -77,7 +79,7 @@ before_filter :signed_in_user
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|
@@ -85,4 +87,15 @@ before_filter :signed_in_user
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def producer_user
+      redirect_to(root_path) unless current_user.producer?
+    end
+
+    def correct_user
+      @product = current_user.products.find_by_id(params[:id])
+      redirect_to root_url if @product.nil?
+    end
 end

@@ -1,8 +1,9 @@
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
+  
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,63 +12,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :dt %><br />
+    <%= f.label :dt %>
     <%= f.text_field :dt %>
-  </div>
-  <div class="field">
-    <%= f.label :desc %><br />
+    <%= f.label :desc %>
     <%= f.text_field :desc %>
-  </div>
-  <div class="field">
-    <%= f.label :benefits %><br />
+    <%= f.label :benefits %>
     <%= f.text_field :benefits %>
-  </div>
-  <div class="field">
-    <%= f.label :estimated_rsp %><br />
+    <%= f.label :estimated_rsp %>
     <%= f.text_field :estimated_rsp %>
-  </div>
-  <div class="field">
-    <%= f.label :l_price %><br />
+    <%= f.label :l_price %>
     <%= f.text_field :l_price %>
-  </div>
-  <div class="field">
-    <%= f.label :benefits_clients %><br />
+    <%= f.label :benefits_clients %>
     <%= f.text_field :benefits_clients %>
-  </div>
-  <div class="field">
-    <%= f.label :photos %><br />
+    <%= f.label :photos %>
     <%= f.text_field :photos %>
-  </div>
-  <div class="field">
-    <%= f.label :videos %><br />
+    <%= f.label :videos %>
     <%= f.text_field :videos %>
-  </div>
-  <div class="field">
-    <%= f.label :sr2l %><br />
+    <%= f.label :sr2l %>
     <%= f.text_field :sr2l %>
-  </div>
-  <div class="field">
-    <%= f.label :refp_number %><br />
+    <%= f.label :refp_number %>
     <%= f.text_field :refp_number %>
-  </div>
-  <div class="field">
-    <%= f.label :fixed_costs %><br />
+    <%= f.label :fixed_costs %>
     <%= f.text_field :fixed_costs %>
-  </div>
-  <div class="field">
-    <%= f.label :gross_margin %><br />
+    <%= f.label :gross_margin %>
     <%= f.text_field :gross_margin %>
-  </div>
-  <div class="field">
-    <%= f.label :bp_link %><br />
+    <%= f.label :bp_link %>
     <%= f.text_field :bp_link %>
-  </div>
-  <div class="field">
-    <%= f.label :pp_link %><br />
+    <%= f.label :pp_link %>
     <%= f.text_field :pp_link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

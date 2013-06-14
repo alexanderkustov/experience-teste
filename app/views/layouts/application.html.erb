@@ -27,6 +27,15 @@
         margin-top:30px;
       }
     </style>
+<script>
+    simpleCart({
+        checkout: { 
+            type: "PayPal" , 
+            email: "knuxus@gmail.com" 
+          },
+    currency:   "EUR"
+});
+</script>
 </head>
 <body>
 <%= render 'layouts/nav' %>

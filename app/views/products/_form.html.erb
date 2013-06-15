@@ -24,8 +24,23 @@
     <%= f.text_field :l_price %>
     <%= f.label :benefits_clients %>
     <%= f.text_field :benefits_clients %>
-    <%= f.label :photos %>
-    <%= f.text_field :photos %>
+<div class="field">
+    <%= f.label :photo %><br />
+    <% if f.object.image_url %>
+    
+      <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
+      
+  
+    <% else %>
+
+      <%= f.file_field :image %>
+  
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url %>
+  
+    <% end %>
+  </div>
+
     <%= f.label :videos %>
     <%= f.text_field :videos %>
     <%= f.label :sr2l %>

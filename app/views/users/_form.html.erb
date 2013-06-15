@@ -28,6 +28,23 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
+    <%= f.label :photo %><br />
+    <% if f.object.image_url %>
+    
+      <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
+      
+  
+    <% else %>
+
+      <%= f.file_field :image %>
+  
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url %>
+  
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :phone %><br />
     <%= f.number_field :phone %>
   </div>
@@ -66,22 +83,6 @@
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br />
-    <% if f.object.image_url %>
-    
-      <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
-      
-  
-    <% else %>
-
-      <%= f.file_field :image %>
-  
-      <%= f.label :remote_image_url, "or image URL" %>
-      <%= f.text_field :remote_image_url %>
-  
-    <% end %>
   </div>
 
   <div class="actions">

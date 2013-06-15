@@ -3,9 +3,9 @@
 <p id="notice" ><%= flash[:alert] %></p>
 <% end %>
  
-
- <%= form_tag sessions_path do %> <!-- backed by sessions controller -->
-	<legend>Please Log In</legend>
+<div class="span4 offset3">
+ <%= form_tag sessions_path do %>
+	<legend>Please Log In or Register</legend>
       <div class="field">
         <%= label_tag :email %>
         <%= text_field_tag :email, params[:email] %>
@@ -15,11 +15,8 @@
         <%= password_field_tag :password, params[:password] %>
       </div>
       <div class="actions"> 
-      	<%= submit_tag "Sign in", class: "btn btn-large btn-primary" %> 
+      	<%= submit_tag "Sign in", class: "btn btn-large btn-primary" %> <%= link_to "Register!", signup_path , class: "btn btn-large btn-warning btn-primary"%>
       </div>
   <% end%>
-
-	<p>New user? <%= link_to "Sign up now!", signup_path %></p>
-	
 </div>
-
+ 

@@ -3,7 +3,13 @@
   <img src="img/ok.jpg" class="img-polaroid hover">
   <p>
     <b>Photos:</b>
-    <%= @product.photos %>
+    <br/>
+    <% @product.images.each do |image| %>
+    
+    <%= image_tag image.image_url(:thumb).to_s if image.image? %>
+
+    <br/>
+    <% end %>
   </p>
 </div>
 

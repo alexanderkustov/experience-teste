@@ -71,6 +71,7 @@ GEM
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
     multi_json (1.7.6)
+    nested_form (0.3.2)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -140,7 +141,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   less-rails
+  libv8 (>= 3.11.8)
   mini_magick
+  nested_form
   rails (= 3.2.13)
   rmagick
   sass-rails (~> 3.2.3)

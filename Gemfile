@@ -16,6 +16,8 @@ group :assets do
   gem "rmagick"
   gem "mini_magick"
   gem "carrierwave"
+  gem "nested_form"
+  gem "libv8", ">= 3.11.8"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

@@ -17,7 +17,9 @@
     <td><%= product.benefits %></td>
     <td><%= product.l_price %></td>
     <td><%= product.benefits_clients %></td>
-    <td><%= product.photos %></td>
+    <% product.images.each do |image| %>
+      <%= image_tag image.image_url(:thumb).to_s if image.image? %>
+    <% end %>
     <td><%= product.videos %></td>
     <td><%= product.sr2l %></td>
     <td><%= product.refp_number %></td>

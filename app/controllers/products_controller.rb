@@ -30,7 +30,7 @@ before_filter :producer_user, only: [:new, :create, :destroy]
   def new
 
     #if logged in as producer, can access this.
-    
+      
     @product = Product.new
 
     respond_to do |format|
@@ -90,8 +90,8 @@ before_filter :producer_user, only: [:new, :create, :destroy]
   end
 
   private
-
     def producer_user
+      current_user.producer = true;
       redirect_to(root_path) unless current_user.producer?
     end
 

@@ -16,7 +16,7 @@
             <form class="navbar-form pull-right">
               
               <% if current_user %>
-                <%= link_to "Add Product", new_product_path , :class => "btn btn-danger" %>
+                <%= link_to "Add Product", new_product_path , :class => "btn btn-danger"%>
                 <span style="color:white">Logged in as <%= current_user.email %></span>
                 <%= link_to "Log out", signout_path, method: "delete", :class => "btn" %>
               <% else %>

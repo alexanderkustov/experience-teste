@@ -14,33 +14,36 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <form class="navbar-form pull-right">
-          
-            
-              <% if current_user %>
-               <span style="color:white">Logged in as <%= current_user.email %></span>
-              <%= link_to "Add Product", new_product_path , :class => "btn btn-danger"%>
-             
-            <a href="#" role="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Shopping Cart<b class="caret"></b></a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-           <div class="simpleCart_items" > </div>
-<div class="sc_demo_items" >
+
+
+          <% if current_user %>
+          <span style="color:white">Logged in as <%= current_user.email %></span>
+          <%= link_to "Add Product", new_product_path , :class => "btn btn-danger"%>
+
+          <a href="#myModal" data-toggle="modal" class="btn btn-info"> Shopping Cart : <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span></a>
+          <%= link_to "Log out", signout_path, method: "delete", :class => "btn" %>
+          <% else %>
+          <%= link_to "Register as User", new_user_path , :class => "btn btn-warning" %>    
+          <% end %>
+        </form>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Shopping Cart</h3>
   </div>
 
-              <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span></a></li>
+   <div class="modal-body">
+     <div class="simpleCart_items"> </div>
+   </div>
 
-              <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">  Final Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span>
-                <a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><a href="javascript:;" class="simpleCart_checkout">checkout</a></a></li>
-                </ul>
+ <div class="modal-footer">
+  <strong>Final Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span></strong>
+  <button class="btn btn-primary simpleCart_checkout"  href="javascript:;" >Checkout</button>
+</div>
 
-              <%= link_to "Log out", signout_path, method: "delete", :class => "btn" %>
-              <% else %>
-              <%= link_to "Register as User", new_user_path , :class => "btn btn-warning" %>    
-              <% end %>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+</div>

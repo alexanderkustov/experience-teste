@@ -1,19 +1,23 @@
 <div class="row">
- <% @products.each do |product| %>
- <div class="span3 simpleCart_shelfItem" id="wrapper">
- <% product.images.each do |image| %>
-  <img src="<%=image.image.url.to_s if image.image? %>" class="img-polaroid hover">
-  <% end %>
-  <p class="texth item_name" style="text-align:center; font-size: 32px;"><%= product.estimated_rsp %></p>
-  
-  <input type="hidden" value="1" class="item_Quantity">
 
-  <div class="btn-group">
-    <a class="btn btn-large item_add" href="javascript:;">Buy</a>
-    <a class="btn disabled btn-large item_price">€<%= product.l_price %></a>
-    <%= link_to 'View Details', product, :class => "btn btn-large" %>
-  </div>
+	<% @products.each_with_index do |product, idx| %>
+	
+	<div class="span3 simpleCart_shelfItem" id="wrapper">
+		<% product.images.each do |image| %>
+			<img src="<%=image.image_url.to_s if image.image? %>" class="img-polaroid hover">
+		<% end %>
+		<p class="texth item_name" style="text-align:center; font-size: 32px;"><%= product.estimated_rsp %></p>
+		<input type="hidden" value="1" class="item_Quantity">
 
-</div>
-<% end %>
-</div>
+		<div class="btn-group">
+			<a class="btn btn-large item_add" href="javascript:;">Buy</a>
+			<a class="btn disabled btn-large item_price">€<%= product.l_price %></a>
+			<%= link_to 'View Details', product, :class => "btn btn-large" %>
+		</div>
+		
+		<% if((idx + 1) % 4 == 0) %>
+		    </div>
+		<% end %>
+	
+	</div>
+	<% end %>

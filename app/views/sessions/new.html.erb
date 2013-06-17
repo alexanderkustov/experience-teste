@@ -2,21 +2,26 @@
 <% if flash[:alert] %>
 <p id="notice" ><%= flash[:alert] %></p>
 <% end %>
- 
-<div class="span4 offset3">
- <%= form_tag sessions_path do %>
-	<legend>Please Log In or Register</legend>
-      <div class="field">
-        <%= label_tag :email %>
-        <%= text_field_tag :email, params[:email] %>
-      </div>
-      <div class="field">
-        <%= label_tag :password %>
-        <%= password_field_tag :password, params[:password] %>
-      </div>
-      <div class="actions"> 
-      	<%= submit_tag "Sign in", class: "btn btn-large btn-primary" %> <%= link_to "Register!", signup_path , class: "btn btn-large btn-warning btn-primary"%>
-      </div>
-  <% end%>
-</div>
- 
+
+  
+<section class="main">
+  <%= form_tag sessions_path, :class => 'form-2' do %>
+          <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+          <p class="float">
+          
+            <label for="login"><i class="icon-user"></i>Email</label>
+            <%= text_field_tag :email, params[:email], :placeholder => "Email"  %>
+          </p>
+          <p class="float">
+            <label for="password"><i class="icon-lock"></i>Password</label>
+            <%= password_field_tag :password, params[:password] , :placeholder => "Password"%>
+          </p>
+          <p class="clearfix"> 
+             <%= link_to "Register!", signup_path , class: "log-twitter"%> 
+             <%= submit_tag "Sign in" %>
+          </p>
+          <% end%>
+        ​​
+      </section>
+      
+  

@@ -17,8 +17,9 @@
           
             
               <% if current_user %>
+               <span style="color:white">Logged in as <%= current_user.email %></span>
               <%= link_to "Add Product", new_product_path , :class => "btn btn-danger"%>
-              <span style="color:white">Logged in as <%= current_user.email %></span>
+             
             <a href="#" role="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Shopping Cart<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
            <div class="simpleCart_items" > </div>

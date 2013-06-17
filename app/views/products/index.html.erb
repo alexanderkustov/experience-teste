@@ -1,36 +1,18 @@
 <div class="row">
  <% @products.each do |product| %>
- <div class="span3" id="wrapper">
-
-  <img src="img/ok.jpg" class="img-polaroid hover">
-  <p class="texth"><%= product.estimated_rsp %></p>
+ <div class="span3 simpleCart_shelfItem" id="wrapper">
+ <% product.images.each do |image| %>
+  <img src="<%=image.image.url.to_s if image.image? %>" class="img-polaroid hover">
+  <% end %>
+  <p class="texth item_name" style="text-align:center; font-size: 32px;"><%= product.estimated_rsp %></p>
+  
+  <input type="hidden" value="1" class="item_Quantity">
 
   <div class="btn-group">
-    <a class="btn btn-large">Buy</a>
-    <a class="btn disabled btn-large">$55</a>
+    <a class="btn btn-large item_add" href="javascript:;">Buy</a>
+    <a class="btn disabled btn-large item_price">€<%= product.l_price %></a>
     <%= link_to 'View Details', product, :class => "btn btn-large" %>
   </div>
-  <tr>
-    <td><%= product.user_id %></td>
-    <td><%= product.dt %></td>
-    <td><%= product.desc %></td>
-    <td><%= product.benefits %></td>
-    <td><%= product.l_price %></td>
-    <td><%= product.benefits_clients %></td>
-    <% product.images.each do |image| %>
-      <%= image_tag image.image_url(:thumb).to_s if image.image? %>
-    <% end %>
-    <td><%= product.videos %></td>
-    <td><%= product.sr2l %></td>
-    <td><%= product.refp_number %></td>
-    <td><%= product.fixed_costs %></td>
-    <td><%= product.gross_margin %></td>
-    <td><%= product.bp_link %></td>
-    <td><%= product.pp_link %></td>
-    <td></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
 
 </div>
 <% end %>

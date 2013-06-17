@@ -5,9 +5,7 @@
   <p>
     <b>Other Photos:</b>
     <br/>
-   
     <%= image_tag image.image_url(:thumb).to_s if image.image? %>
-
     <br/>
     <% end %>
   </p>
@@ -15,7 +13,7 @@
 
 <div class="span6">
   <p id="notice"><%= notice %></p>
-  <h1>Great Product</h1>
+  <h1>Product Name</h1>
   <h5>Published by: <a href="<%= user_path(@product.user) %>"><%= @product.user.name %></a> in Dept: <%= @product.dt %> </h5>
   <h4><%= @product.desc %></h4>
   Benefits

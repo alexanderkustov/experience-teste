@@ -61,11 +61,8 @@ class User < ActiveRecord::Base
   validates :address, :presence => true, :if => :producer?
   validates :photo, :presence => true, :if => :producer?
 
-
   private
-
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
-
 end

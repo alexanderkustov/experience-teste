@@ -1,38 +1,28 @@
 
 <%= nested_form_for @product, :html => {:multipart => true} do |f| %>
-  <% if @product.errors.any? %>
-  
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @product.errors.any? %>
 
+<div id="error_explanation">
+  <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% end %>
+<div class="row">
+  <div class="span4">
+    <h2>Main Attributes</h2>
     <%= f.label :dt %>
     <%= f.text_field :dt %>
     <%= f.label :desc %>
     <%= f.text_field :desc %>
-    <%= f.label :benefits %>
-    <%= f.text_field :benefits %>
     <%= f.label :estimated_rsp %>
     <%= f.text_field :estimated_rsp %>
     <%= f.label :l_price %>
     <%= f.text_field :l_price %>
-    <%= f.label :benefits_clients %>
-    <%= f.text_field :benefits_clients %>
-    
-    <div>
-      <%= label_tag "Images" %>
-      <%= f.fields_for :images %>
-      <p><%= f.link_to_add "Add an image", :images %></p>
-    </div>
-  
-    <%= f.label :videos %>
-    <%= f.text_field :videos %>
     <%= f.label :sr2l %>
     <%= f.text_field :sr2l %>
     <%= f.label :refp_number %>
@@ -45,8 +35,28 @@
     <%= f.text_field :bp_link %>
     <%= f.label :pp_link %>
     <%= f.text_field :pp_link %>
-    
-    <div class="actions">
-      <%= f.submit %>
+   
+  </div>
+
+  <div class="span4">
+    <h2>Extras</h2>
+     <div>
+      <p>Images</p>
+      <%= f.fields_for :images %>
+      <p><%= f.link_to_add "Add an image", :images %></p>
     </div>
+    <%= f.label :benefits %>
+    <%= f.text_field :benefits %>
+    <%= f.label :benefits_clients %>
+    <%= f.text_area :benefits_clients, :rows => 5 %>
+    <%= f.label :videos %>
+    <%= f.text_field :videos %>
+ 
+    <div class="actions">
+      <%= f.submit "Create Product", :class => 'btn btn-large btn-info' %>
+    </div>
+ 
+  </div>  
+</div>
+
 <% end %>

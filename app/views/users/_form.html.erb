@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="span4">
+
 <%= form_for @user, :html => {:multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +14,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
+  
+  
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </div>
-  <div class="field">
+  
+  
     <%= f.label :password, 'Password' %><br />
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
+  
+  
     <%= f.label :password_confirmation, 'Password confirmation' %><br />
     <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
+  
+  
     <%= f.label :photo %><br />
     <% if f.object.image_url %>
-    
-      <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
+     <%= image_tag f.object.image_url(:thumb).to_s if f.object.image? %>
       
   
     <% else %>
@@ -43,48 +45,41 @@
   
     <% end %>
   </div>
-  <div class="field">
+  
+  <div class="span4">
     <%= f.label :phone %><br />
     <%= f.number_field :phone %>
-  </div>
-  <div class="field">
+  
     <%= f.label :fb %><br />
     <%= f.text_field :fb %>
-  </div>
-  <div class="field">
+  
     <%= f.label :gplus %><br />
     <%= f.text_field :gplus %>
-  </div>
-  <div class="field">
+  
     <%= f.label :linked %><br />
     <%= f.text_field :linked %>
-  </div>
-  <div class="field">
+    
     <%= f.label :twit %><br />
     <%= f.text_field :twit %>
-  </div>
-  <div class="field">
+
     <%= f.label :birth_date %><br />
     <%= f.date_select :birth_date %>
-  </div>
-  <div class="field">
+  
     <%= f.label :nationality %><br />
     <%= f.text_field :nationality %>
-  </div>
-  <div class="field">
+  
     <%= f.label :passport %><br />
     <%= f.text_field :passport %>
-  </div>
-  <div class="field">
+  
     <%= f.label :ss %><br />
     <%= f.text_field :ss %>
-  </div>
-  <div class="field">
+  
     <%= f.label :address %><br />
     <%= f.text_field :address %>
-  </div>
+  
 
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

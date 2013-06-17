@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   attr_accessible :address, :password, :password_confirmation, 
     :birth_date, :email, :fb, :gplus, :linked, :name, 
-    :nationality, :passport, :phone, :image, :remote_image_url, :ss, :twit
+    :nationality, :passport, :phone, :image, :remote_image_url, :ss, :twit, :producer
 
     mount_uploader :image, ImageUploader
 

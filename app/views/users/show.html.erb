@@ -72,17 +72,18 @@
     <div class="row">
       <% @products.each do |product| %>
       <div class="span3" id="wrapper">
+          <% product.images.each do |image| %>
+      <img src="<%=image.image_url.to_s if image.image? %>" class="img-polaroid hover">
+    <% end %>
+       
+        <p class="texth item_name" style="text-align:center; font-size: 32px;"><%= product.estimated_rsp %></p>
+        <input type="hidden" value="1" class="item_Quantity">
 
-        <img src="img/ok.jpg" class="img-polaroid hover">
-        <p class="texth">PRICE WILL APPEAR HERE</li>
-
-         <div class="btn-group">
-          <button class="btn btn-large">Buy</button>
-          <button class="btn disabled btn-large">$55</button>
-          <button class="btn btn-large">View Details</button>
-        </div>
-
-
+       <div class="btn-group">
+      <a class="btn btn-large item_add" href="javascript:;">Buy</a>
+      <a class="btn disabled btn-large item_price">€<%= product.l_price %></a>
+      <%= link_to 'View Details', product, :class => "btn btn-large" %>
+    </div>
 
         <li>
           <b>Dt:</b>
@@ -117,11 +118,6 @@
         <li>
           <b>Benefits clients:</b>
           <%= product.benefits_clients %>
-        </li>
-
-        <li>
-          <b>Photos:</b>
-          <%= product.photos %>
         </li>
 
         <li>
